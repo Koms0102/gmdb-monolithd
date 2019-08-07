@@ -1,0 +1,14 @@
+version: '3.7'
+services:
+  gmdb-monolith:
+    image: gmdb/monolith
+    ports:
+      - 8080:8080
+    depends_on:
+      - gmdb-devdb
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://gmdb-devdb/gmdb?useSSL=false&allowPublicKeyRetrieval=true
+      - SPRING_DATASOURCE_USERNAME=gmdb_app
+      - SPRING_DATASOURCE_PASSWORD=1234
+  gmdb-devdb:
+    image: gmdb/devdb
