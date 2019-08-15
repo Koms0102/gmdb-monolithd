@@ -53,7 +53,7 @@ annotationProcessor 'org.projectlombok:lombok:1.18.6'
 * Added jococo for code coverage 
 
 ### To Dockerize
-* NOTE: Database must be running and contain a database named 'gmdb' (can be empty), and if in another container, must be on the same network specified below
+* NOTE: MySql must be running and contain a database named 'gmdb' (can be empty), and if in another container, must be on the same network specified below
 1. Build the docker image: ` docker build -t gmdb/monolith . `
 1. Run the docker image
 ```
