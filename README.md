@@ -1,4 +1,4 @@
-# gmdb-monolith
+# gmdb-monolithd - Refactored for production
 
 ## Tag line
 A monolithic movie database application that is in dire need of modernization.
@@ -41,5 +41,28 @@ compileOnly 'org.projectlombok:lombok:1.18.6'
 annotationProcessor 'org.projectlombok:lombok:1.18.6'
 ```
 
-# gmdb-monolithd
-# gmdb-monolithd
+## Modifications made to make production ready
+* Added test.properties and h2 db for testing.  Implemented in GmdbMonolithApplicationTests
+* Added environment vars for database connection
+  * DB_HOST
+  * DB_PORT
+  * DB_USER
+  * DB_PASSWORD
+* Added Dockerfile to deploy in docker container
+* Added Jenkinsfile for automated builds & deployment (CI / CD)
+* Added jococo for code coverage 
+
+### To Dockerize
+* NOTE: Database must be running and contain a database named 'gmdb' (can be empty), and if in another container, must be on the same network specified below
+1. Build the docker image: ` docker build -t gmdb/monolith . `
+1. Run the docker image
+```
+    docker run -d -p 8080:8080 \
+        -e DB_HOST=[db host, or, docker db container name or id] \
+        -e DB_PORT=[db port (internal if running in a container)] \
+        -e DB_USER=[db username] \
+        -e DB_PASSWORD=[db password] \
+        --network [name of docker network db is on] \
+        --name gmdb-monolith \
+        gmdb/monolith
+``` 
