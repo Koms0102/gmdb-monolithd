@@ -27,8 +27,7 @@ Before the architecture committee will allow new features to be added they are r
 - Users will need to verify that their email address is valid.
 
 ## Notes
-Test data is contained in the csv files. These are formatted for import using MySQL Workbench
-
+Test data is contained in the file dataload.sql. This sql script can be run in your ide or any mysql client like workbench or shell.
 
 In order to build this project, you must have the Lombok plugin installed to process annotations before compiling the code.
 
