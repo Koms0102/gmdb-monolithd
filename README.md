@@ -41,6 +41,28 @@ compileOnly 'org.projectlombok:lombok:1.18.6'
 annotationProcessor 'org.projectlombok:lombok:1.18.6'
 ```
 
+## To deploy a mysql db in a docker container...
+```
+docker run -d -p 6603:3306 \
+    -e MYSQL_ROOT_PASSWORD=[secret password] \
+    -e MYSQL_DATABASE=gmdb \
+    -e MYSQL_USER=[non root username for this db] \
+    -e MYSQL_PASSWORD=[password for user] \
+    --name some-mysql  \
+    mysql:8
+```
+[More Details](https://hub.docker.com/_/mysql) 
+
+### Notes:
+* You will need the mysql client or [mysql workbench](https://dev.mysql.com/downloads/workbench/) to access the db outside of the application
+  * Mac install using [brew](http://brew.sh): ` $ brew install mysql.client `
+  * [Windows or Mac download](https://dev.mysql.com/downloads/shell/)
+* To connect to the db, you will need to use 127.0.0.1 for the host, or add another entry to your `etc/hosts` file for the localhost.  Using localhost does not work.
+* Connecting with mysql client
+```
+    $ mysql -h 127.0.0.1 -p 6603 -u [username] -p
+```
+
 ## Modifications made to make production ready
 * Added test.properties and h2 db for testing.  Implemented in GmdbMonolithApplicationTests
 * Added environment vars for database connection
