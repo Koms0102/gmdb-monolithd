@@ -87,3 +87,14 @@ docker run -d -p 6603:3306 \
         --name gmdb-monolith \
         gmdb/monolith
 ``` 
+
+### To deploy to Pivitol Web Services
+*Assumes you have at least a free PWS account*
+
+**Do this from the root of the project**
+* cf login -a https://api.run.pivotal.io
+* cf create-service cleardb spark gmdb
+* ./gradlew bootJar
+* cf push monolith --random-route -m 1024m
+
+`cf push` relies on the `manifest.yml` file in the project root directory.
