@@ -1,0 +1,8 @@
+---
+applications:
+  - name: monolith
+    buildpacks: 
+      - java_buildpack
+    path: build/libs/gmdb-monolith-0.0.1-SNAPSHOT.jar
+    services:
+      - gmdb
