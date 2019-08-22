@@ -97,4 +97,6 @@ docker run -d -p 6603:3306 \
 * ./gradlew bootJar
 * cf push monolith --random-route -m 1024m
 
+**NOTE: Spring is having issues creating the review table automatically.  You will need to create it manually.  Do this by creating a key for the db, connecting through a mysql client and create the table manually.  From the sql prompt, run `> source review.sql`.  You will aslo need to run `loaddata.sql`**
+
 `cf push` relies on the `manifest.yml` file in the project root directory.
