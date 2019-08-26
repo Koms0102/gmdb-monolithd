@@ -87,3 +87,16 @@ docker run -d -p 6603:3306 \
         --name gmdb-monolith \
         gmdb/monolith
 ``` 
+
+### To deploy to Pivitol Web Services
+*Assumes you have at least a free PWS account*
+
+**Do this from the root of the project**
+* cf login -a https://api.run.pivotal.io
+* cf create-service cleardb spark gmdb
+* ./gradlew bootJar
+* cf push monolith --random-route -m 1024m
+
+**NOTE: Spring is having issues creating the review table automatically.  You will need to create it manually.  Do this by creating a key for the db, connecting through a mysql client and create the table manually.  From the sql prompt, run `> source review.sql`.  You will aslo need to run `loaddata.sql`**
+
+`cf push` relies on the `manifest.yml` file in the project root directory.

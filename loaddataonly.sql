@@ -1,55 +1,5 @@
-/*
-	Create the user table
-*/
-CREATE TABLE `user` (
-                        `id` bigint(20) NOT NULL AUTO_INCREMENT,
-                        `email` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
-                        `password` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
-                        `repeat_password` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
-                        `screen_name` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
-                        PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
-/*
-	Initialize the user table
-*/
 INSERT INTO `user` (`id`,`email`,`password`,`repeat_password`,`screen_name`) VALUES (1,'admin@gmdb.com','password','password','SomeBody');
 
-/*
-	Create the movie database
-*/
-CREATE TABLE `movies` (
-                          `movie_id` bigint(20) NOT NULL AUTO_INCREMENT,
-                          `actors` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
-                          `awards` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
-                          `boxoffice` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
-                          `country` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
-                          `dvd` date DEFAULT NULL,
-                          `director` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
-                          `genre` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
-                          `language` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
-                          `metascore` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
-                          `plot` longtext COLLATE utf8mb4_general_ci,
-                          `poster` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
-                          `production` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
-                          `rated` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
-                          `released` date DEFAULT NULL,
-                          `response` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
-                          `runtime` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
-                          `type` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
-                          `website` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
-                          `writer` longtext COLLATE utf8mb4_general_ci,
-                          `year` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
-                          `imdb_rating` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
-                          `imdb_votes` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
-                          `imdbid` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
-                          `title` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
-                          PRIMARY KEY (`movie_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=67 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
-/*
-	Initialize the movie table
-*/
 INSERT INTO `movies` (`actors`,`awards`,`boxoffice`,`country`,`dvd`,`director`,`genre`,`language`,`metascore`,`plot`,`poster`,`production`,`rated`,`released`,`response`,`runtime`,`type`,`website`,`writer`,`year`,`imdb_rating`,`imdb_votes`,`imdbid`,`title`) VALUES ('Chris Pratt, Zoe Saldana, Dave Bautista, Vin Diesel','Nominated for 1 Oscar. Another 12 wins & 42 nominations.','$389,804,217','USA','2017-08-22','James Gunn','Action, Adventure, Comedy, Sci-Fi','English','67','The Guardians struggle to keep together as a team while dealing with their personal family issues, notably Star-Lord\'s encounter with his father the ambitious celestial being Ego.','https://m.media-amazon.com/images/M/MV5BMTg2MzI1MTg3OF5BMl5BanBnXkFtZTgwNTU3NDA2MTI@._V1_SX300.jpg','Walt Disney Pictures','PG-13','2017-05-05','True','136 min','movie','https://marvel.com/guardians','James Gunn, Dan Abnett (based on the Marvel comics by), Andy Lanning (based on the Marvel comics by), Steve Englehart (Star-Lord created by), Steve Gan (Star-Lord created by), Jim Starlin (Gamora and Drax created by), Stan Lee (Groot created by), Larry Lieber (Groot created by), Jack Kirby (Groot created by), Bill Mantlo (Rocket Raccoon created by), Keith Giffen (Rocket Raccoon created by), Steve Gerber (Howard the Duck created by), Val Mayerik (Howard the Duck created by)','2017','7.7','449,175','tt3896198','Guardians of the Galaxy Vol. 2');
 INSERT INTO `movies` (`actors`,`awards`,`boxoffice`,`country`,`dvd`,`director`,`genre`,`language`,`metascore`,`plot`,`poster`,`production`,`rated`,`released`,`response`,`runtime`,`type`,`website`,`writer`,`year`,`imdb_rating`,`imdb_votes`,`imdbid`,`title`) VALUES ('Mark Hamill, Harrison Ford, Carrie Fisher, Peter Cushing','Won 6 Oscars. Another 50 wins & 28 nominations.','N/A','USA','1977-05-25','George Lucas','Action, Adventure, Fantasy, Sci-Fi','English','90','Luke Skywalker joins forces with a Jedi Knight, a cocky pilot, a Wookiee and two droids to save the galaxy from the Empire\'s world-destroying battle station, while also attempting to rescue Princess Leia from the mysterious Darth Vader.','https://m.media-amazon.com/images/M/MV5BNzVlY2MwMjktM2E4OS00Y2Y3LWE3ZjctYzhkZGM3YzA1ZWM2XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg','20th Century Fox','PG','2004-09-21','True','121 min','movie','http://www.starwars.com/episode-iv/','George Lucas','1977','8.6','1,104,701','tt0076759','Star Wars: Episode IV - A New Hope');
 INSERT INTO `movies` (`actors`,`awards`,`boxoffice`,`country`,`dvd`,`director`,`genre`,`language`,`metascore`,`plot`,`poster`,`production`,`rated`,`released`,`response`,`runtime`,`type`,`website`,`writer`,`year`,`imdb_rating`,`imdb_votes`,`imdbid`,`title`) VALUES ('Marlon Brando, Al Pacino, James Caan, Richard S. Castellano','Won 3 Oscars. Another 24 wins & 28 nominations.','N/A','USA','2001-10-09','Francis Ford Coppola','Crime, Drama','English, Italian, Latin','100','The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.','https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg','Paramount Pictures','R','1972-03-24','True','175 min','movie','http://www.thegodfather.com','Mario Puzo (screenplay by), Francis Ford Coppola (screenplay by), Mario Puzo (based on the novel by)','1977','9.2','1,408,749','tt0068646','The Godfather');
@@ -87,25 +37,6 @@ INSERT INTO `movies` (`actors`,`awards`,`boxoffice`,`country`,`dvd`,`director`,`
 INSERT INTO `movies` (`actors`,`awards`,`boxoffice`,`country`,`dvd`,`director`,`genre`,`language`,`metascore`,`plot`,`poster`,`production`,`rated`,`released`,`response`,`runtime`,`type`,`website`,`writer`,`year`,`imdb_rating`,`imdb_votes`,`imdbid`,`title`) VALUES ('Pete Duel, Clinton Greyn, Sal Mineo, Claudine Longet','N/A','N/A','USA',NULL,'Leslie H. Martinson','Adventure','English','N/A','Two pilots are hired to reclaim a stolen jet from the son of a South American dictator.','N/A','N/A','N/A','1971-12-10','True','100 min','movie','N/A','Philip DeGuere Jr., Robert Foster','1971','8.0','38','tt0067220','How to Steal an Airplane');
 INSERT INTO `movies` (`actors`,`awards`,`boxoffice`,`country`,`dvd`,`director`,`genre`,`language`,`metascore`,`plot`,`poster`,`production`,`rated`,`released`,`response`,`runtime`,`type`,`website`,`writer`,`year`,`imdb_rating`,`imdb_votes`,`imdbid`,`title`) VALUES ('Joshua Fisher P. Anderson, Monica Young, Maria-Elena Laas, Zach Horton','N/A','N/A','USA',NULL,'Zach Horton','Drama','English','N/A','An experimental drama detailing the post 9/ll life of a successful musician who tries to rescue his floundering relationship by reinventing himself, but has lost his ability to communicate beyond his own vanity.','https://images-na.ssl-images-amazon.com/images/M/MV5BMTY4OTI5NDQxN15BMl5BanBnXkFtZTcwMTAxMTU1MQ@@._V1_SX300.jpg','N/A','N/A','2006-06-01','True','100 min','movie','N/A','Zach Horton','2006','8.7','29','tt1094159','Airplane Disasters');
 
-/*
-	Create the review table
-*/
-CREATE TABLE `review` (   `id` bigint(20) NOT NULL AUTO_INCREMENT,
-                          `last_updated` datetime DEFAULT NULL,
-                          `review_text` longtext COLLATE utf8mb4_general_ci,
-                          `review_title` text COLLATE utf8mb4_general_ci,
-                          `movie_id` bigint NOT NULL,
-                          `reviewer_id` bigint NOT NULL,
-                          PRIMARY KEY (`id`),
-                          KEY `FKqi4kuwaf48wh6qqa4bcea2i6s` (`movie_id`),
-                          KEY `FKt58e9mdgxpl7j90ketlaosmx4` (`reviewer_id`),
-                          CONSTRAINT `FKqi4kuwaf48wh6qqa4bcea2i6s` FOREIGN KEY (`movie_id`) REFERENCES `movies` (`movie_id`),
-                          CONSTRAINT `FKt58e9mdgxpl7j90ketlaosmx4` FOREIGN KEY (`reviewer_id`) REFERENCES `user` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
-/*
-	Initialize Review Table
-*/
 INSERT INTO `review` (`review_text`,`review_title`,`movie_id`,`reviewer_id`)
     VALUES ('Tell me a movie that is more famous than this. Tell me a movie that has had more parodies spinned off its storyline than this. Tell me one movie that has been as quoted as a much as this. The answer is you can\'t. No movie has had as much of an impact as The Godfather has had ever since it was released.The acting was simply amazing, what else could you say. What could be more appealing to people(even today) than watching actors like Al Pacino, Marlon Brando, James Caan, Diane Keaton, Talia Shire and Robert Duvall. This is like heaven for someone who is a fan of movies. With this movie Brando was able to bring himself back into the limelight. His performance as the godfather alone is iconic. His character has been recreated so much in films that it has almost if it has not already become a cliché. His performance though was not a cliché. His performance was subtle and breathtaking. It was so genuine and realistic that it was not just probably but definitely more genuine than Marlon Brando himself. Al Pacino was perfect for this film as well. What a way to start up your career. His character was all about depth and he displayed it perfectly. He was able to display his own inner-battles in his mind as well as the battles he had with his family, friends and enemies. His character was more of a psychological character study than anything else to me. Robert Duvall to me was the glue to the movie. He added a different perspective to everything in just that he was not Italian yet having the respect of the mafia. His character is a man of high authority within the Corleone family who was listened to and insightful;. This was simply perfect giving the film great balance throughout. The rest of the cast was just icing on the cake.The writing was phenomenal and breathtaking. As mentioned before there has been no movie quoted more than this. It is not even the quotes though that makes the writing in here so perfect. It is the symbolism and meaning that went into every scene. There are countless symbols, messages and lines in here that are so memorable yet it is as realistic as a movie could get. The directing by Coppola was perfect as well. Not many movies can be 3 hours and yet maintain a good level of interest from the audience like The Godfather. Coppola deserves credit for this. The symbolism and messages that went into every scene also has to do with the directing not just the writing. The movie is so well edited and strung together that the only word that could come to my mind is perfection. The cinematography and music were perfect. The score of this movie is one of the most memorable ever. If you were to hear it you could identify it right away. The cinematography was what actually really drove this movie. The Godfather seems to have this mystique to it, it gives you the feeling you are watching something truly remarkable. The horse\'s head, the scene of Brando running with his groceries, the coffee shop scene, \"I\'ll give him an offer he can\'t refuse\"\" and countless other scenes and quotes from this movie have become a part of our culture. These scenes and lines have been recycled over and over again in comedies, commercials, etc. that it is impossible to avoid the greatness of The Godfather. The Godfather is like a disease once you see it you fall in love with it. I don\'t know if it is the greatest movie ever but it is definitely the most iconic film ever made.\"',
             'An iconic film',
