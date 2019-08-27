@@ -100,3 +100,9 @@ docker run -d -p 6603:3306 \
 **NOTE: Spring is having issues creating the review table automatically.  You will need to create it manually.  Do this by creating a key for the db, connecting through a mysql client and create the table manually.  From the sql prompt, run `> source review.sql`.  You will aslo need to run `loaddata.sql`**
 
 `cf push` relies on the `manifest.yml` file in the project root directory.
+
+### gMDb Rest Api
+The first phase of the refactor is to replace the old UI with the new one.  Adding a GmdbRestController gives us this.
+
+Tests should show how the rest api can be used, or you can look at the
+Postman test project in the file GmdbRestApi.postman_collection (import this file into Postman).  

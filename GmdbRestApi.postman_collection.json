@@ -1,0 +1,154 @@
+{
+	"info": {
+		"_postman_id": "0b6e9462-4f7a-44bf-b2ba-1e2fadab765f",
+		"name": "GmdbRestApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n\t\"userid\": \"email@anywhere.com\",\n\t\"password\": \"someSecretPassword\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/gmdb/restapi/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"gmdb",
+						"restapi",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"email@anywhere.com\",\n\t\"password\": \"someSecretPassword\",\n\t\"repeatPassword\": \"someSecretPassword\",\n\t\"screenName\": \"fancypants\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/gmdb/restapi/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"gmdb",
+						"restapi",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search for Movies",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/gmdb/restapi/movies/?ss=",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"gmdb",
+						"restapi",
+						"movies",
+						""
+					],
+					"query": [
+						{
+							"key": "ss",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get one movie by imdbid",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/gmdb/restapi/movies/tt0068646",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"gmdb",
+						"restapi",
+						"movies",
+						"tt0068646"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add review",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"imdbId\": \"tt0092007\",\n\t\"userId\": 1,\n\t\"reviewTitle\": \"Great Movie!\",\n\t\"reviewBody\": \"Man, this is the greatest movie since the original series.\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/gmdb/restapi/reviews",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"gmdb",
+						"restapi",
+						"reviews"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
