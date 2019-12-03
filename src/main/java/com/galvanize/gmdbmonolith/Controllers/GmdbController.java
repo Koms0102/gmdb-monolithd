@@ -1,7 +1,6 @@
 package com.galvanize.gmdbmonolith.Controllers;
 
 import com.galvanize.gmdbmonolith.Models.Movie;
-import com.galvanize.gmdbmonolith.Models.Review;
 import com.galvanize.gmdbmonolith.Models.User;
 import com.galvanize.gmdbmonolith.Services.GmdbService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +14,6 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpSession;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 @Controller
