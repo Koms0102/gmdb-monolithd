@@ -100,3 +100,52 @@ docker run -d -p 6603:3306 \
 **NOTE: Spring is having issues creating the review table automatically.  You will need to create it manually.  Do this by creating a key for the db, connecting through a mysql client and create the table manually.  From the sql prompt, run `> source review.sql`.  You will aslo need to run `loaddata.sql`**
 
 `cf push` relies on the `manifest.yml` file in the project root directory.
+
+---
+### Rest api (added December 2019)
+
+### Login
+POST: `http://<host>:<port>/gmdb/restapi/login`
+
+BODY: 
+```json 
+{
+	"email":"<email address>",
+	"password": "<password>"
+}
+```
+
+### Register
+POST: `http://<host>:<port>/gmdb/restapi/register`
+
+BODY:
+```json
+{
+	"email": "<email address>",
+	"password": "<password>",
+	"repeatPassword": "<password>",
+	"screenName": "<desired screen name>"
+}
+```
+
+### Search for movies  
+GET: `http://<host>:<port>/gmdb/restapi/movies/?criteria=<string criteria>`
+
+Searches are case INsenitive
+
+### Get one movie by imdb id
+GET: `http://localhost:8080/gmdb/restapi/movie/<imdb id>`
+
+### Add a review
+POST: http://<host>:<port>/gmdb/restapi/review/<imdb id>
+
+BODY:
+```json
+{
+	"title":"review 1202-3",
+	"body": "body for review 1202-3"
+}
+```
+NOTE: 
+- User must be logged in to post a review!
+- Currently, there is no method to retrieve the reviews
