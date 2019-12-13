@@ -128,6 +128,13 @@ BODY:
 }
 ```
 
+### Get random movies
+Useful for simulating addvertising, or to use for populating a slideshow.  Could also use for suggestions.
+
+GET: `http://<host>:<port>/gmdb/restapi/movies/rand?qty=<number of movies to return -default 3>`
+
+NOTE: Qty will deliver the quantity (qty) of random movies.  If qty is not supplied, it will default to three. 
+
 ### Search for movies  
 GET: `http://<host>:<port>/gmdb/restapi/movies/?criteria=<string criteria>`
 
