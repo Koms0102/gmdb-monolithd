@@ -53,6 +53,10 @@ public class GmdbService {
         return movieRepository.findMovieModelByImdbid(imdbId);
     }
 
+    public List<Movie> getRandomMovies(int quantity){
+        return movieRepository.findRandomMovies(quantity);
+    }
+
     public Movie addReview(String imdbId, Long userId, String reviewTitle, String reviewBody){
         Review review= new Review();
         review.setMovie(movieRepository.findMovieModelByImdbid(imdbId));

@@ -65,6 +65,11 @@ public class GmdbRestController {
         return gmdbService.getMovie(imdbid);
     }
 
+    @GetMapping("/movies/rand")
+    public List<Movie> getRandomMovies(@RequestParam(defaultValue = "3", required = false) int qty){
+        return gmdbService.getRandomMovies(qty);
+    }
+
     @PostMapping("/review/{imdbid}")
     public Movie postReview(HttpSession httpSession,
                             @RequestBody ReviewForm review,
