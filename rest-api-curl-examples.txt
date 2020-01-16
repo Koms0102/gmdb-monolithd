@@ -1,0 +1,26 @@
+curl --location --request POST 'http://gmdb-dev1.robwing.com/gmdb/restapi/register' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+	"email": "email0116-1@anywhere.com",
+	"password": "someSecretPassword",
+	"repeatPassword": "someSecretPassword",
+	"screenName": "fancypants 1202-1"
+}'
+
+curl --location --request POST 'http://gmdb-dev1.robwing.com/gmdb/restapi/login' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+	"email":"admin@gmdb.com",
+	"password": "password"
+}'
+
+curl --location --request GET 'http://gmdb-dev1.robwing.com/gmdb/restapi/movies/?criteria='
+
+curl --location --request GET 'http://gmdb-dev1.robwing.com/gmdb/restapi/movie/tt0068646'
+
+curl --location --request POST 'http://gmdb-dev1.robwing.com/gmdb/restapi/review/tt0068646' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+	"title":"review 1202-3",
+	"body": "body for review 1202-3"
+}'
